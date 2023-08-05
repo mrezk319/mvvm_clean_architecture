@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mvvm_clean_arch/Core/utils/app_routes.dart';
 
 import 'Features/splash/presentation/view/spalsh_screen.dart';
 import 'constants.dart';
@@ -14,13 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       title: 'MVVMTestApp',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: primaryColor,
-      ),
-      home: const SplashScreen(),
+          scaffoldBackgroundColor: primaryColor,
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
+      // home: const SplashScreen(),
     );
   }
 }

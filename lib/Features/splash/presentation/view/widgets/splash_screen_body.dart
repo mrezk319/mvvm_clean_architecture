@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mvvm_clean_arch/Features/splash/presentation/view/widgets/sliding_text.dart';
 
+import '../../../../../Core/utils/app_routes.dart';
 import '../../../../../Core/utils/assets.dart';
 import '../../../../home/presentation/view/home_screen.dart';
 
@@ -27,8 +27,9 @@ class _SplashBodyState extends State<SplashBody>
 
   void navigateToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(const HomeScreen(),
-          transition: Transition.fade, duration: const Duration(seconds: 1));
+      // Get.to(const HomeScreen(),
+      //     transition: Transition.fade, duration: const Duration(seconds: 1));
+      GoRouter.of(context).push(AppRoutes.homeRoute);
     });
   }
 
