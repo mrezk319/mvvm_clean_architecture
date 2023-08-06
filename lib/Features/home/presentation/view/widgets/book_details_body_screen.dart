@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/custom_list_view.dart';
-import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/custom_simila_list_view.dart';
-import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/custome_list_view_item.dart';
+import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/featured_books_list_view.dart';
+import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/custom_similar_list_view.dart';
+import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/feature_book_list_view_item.dart';
 import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/free_or_pay.dart';
 import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/rate_row.dart';
 
@@ -29,7 +29,7 @@ class BookDetailsBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.sizeOf(context).width * 0.15),
-                  child: const CustomListViewItem(),
+                  child: CustomListViewItem(),
                 ),
                 const SizedBox(height: 43),
                 const Text(

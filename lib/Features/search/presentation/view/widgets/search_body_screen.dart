@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mvvm_clean_arch/Core/utils/styles.dart';
-import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/best_seller_list_item.dart';
+import 'package:mvvm_clean_arch/Features/home/data/models/book_model/book_model.dart';
+import 'package:mvvm_clean_arch/Features/home/presentation/view/widgets/new_book_list_item.dart';
 
 import '../../../../../constants.dart';
 
@@ -18,9 +19,11 @@ class SearchResultListView extends StatelessWidget {
       ),
       child: ListView.builder(
         padding: EdgeInsets.zero,
-        itemBuilder: (context, i) => const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: BestSellerListItem(),
+        itemBuilder: (context, i) => Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: BestSellerListItem(
+            book: BookModel(),
+          ),
         ),
         itemCount: 10,
       ),
