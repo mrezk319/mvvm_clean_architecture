@@ -29,7 +29,7 @@ class _SplashBodyState extends State<SplashBody>
     Future.delayed(const Duration(seconds: 3), () {
       // Get.to(const HomeScreen(),
       //     transition: Transition.fade, duration: const Duration(seconds: 1));
-      GoRouter.of(context).push(AppRoutes.homeRoute);
+      GoRouter.of(context).pushReplacement(AppRoutes.homeRoute);
     });
   }
 
