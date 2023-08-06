@@ -9,14 +9,17 @@ class CustomListViewItem extends StatelessWidget {
   String imgUrl;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.5 / 2,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: CachedNetworkImage(
-          imageUrl: imgUrl,
-          fit: BoxFit.cover,
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+    return Hero(
+      tag: imgUrl,
+      child: AspectRatio(
+        aspectRatio: 1.5 / 2,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: CachedNetworkImage(
+            imageUrl: imgUrl,
+            fit: BoxFit.cover,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
         ),
       ),
     );

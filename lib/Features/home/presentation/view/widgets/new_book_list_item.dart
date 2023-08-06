@@ -17,14 +17,14 @@ class BestSellerListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoutes.homeDetailsRoute);
+        GoRouter.of(context).push(AppRoutes.homeDetailsRoute, extra: book);
       },
       child: Row(
         children: [
           SizedBox(
             width: MediaQuery.sizeOf(context).width * 0.18,
             child: CustomListViewItem(
-                imgUrl: book.volumeInfo!.imageLinks!.thumbnail.toString()),
+                imgUrl: book.volumeInfo!.imageLinks?.thumbnail ?? ''),
           ),
           const SizedBox(width: 30),
           Expanded(
@@ -40,7 +40,9 @@ class BestSellerListItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  book.volumeInfo!.authors!.first,
+                  book.volumeInfo!.authors == null
+                      ? ""
+                      : book.volumeInfo!.authors!.first,
                   style: Styles.textStyle14,
                 ),
                 const SizedBox(height: 3),
